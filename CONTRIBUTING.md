@@ -19,7 +19,19 @@ Pull requests welcome. If something in the install guide, setup docs, or skill d
 
 ## Skill structure
 
-Each skill is a markdown file (`SKILL.md`) inside its own folder under `skills/`. Skills reference knowledge notes directly from the canonical `knowledge-notes/` directory via their frontmatter `references:` field using relative paths like `../../knowledge-notes/filename.md`. When adding a new skill, include the knowledge note paths in the skill's frontmatter `references:` array. The project structure includes: skills in `skills/skillname/SKILL.md`, commands in `commands/`, knowledge notes in `knowledge-notes/`, and sample outputs in `sample-outputs/`.
+Each skill is a markdown file (`SKILL.md`) inside its own folder under `skills/`. Skills reference knowledge notes directly from the canonical `knowledge-notes/` directory via their frontmatter `references:` field using relative paths like `../../knowledge-notes/filename.md`. When adding a new skill, include the knowledge note paths in the skill's frontmatter `references:` array.
+
+The project structure: skills in `skills/skillname/SKILL.md`, agent chains in `agents/`, slash commands in `commands/`, knowledge notes in `knowledge-notes/`, and sample outputs in `sample-outputs/`.
+
+## Validating your changes
+
+Before opening a pull request, run the pack validator:
+
+```bash
+node scripts/validate.mjs
+```
+
+It checks skill/agent/command frontmatter, naming rules, that every `references:` path resolves, that every `${CLAUDE_PLUGIN_ROOT}` path mentioned in a command actually exists, and that the manifests parse with the right fields. CI runs the same check on every pull request, plus a build of the installable artifacts. If you change anything that ships, rebuild the installables with `bash scripts/build-installable.sh` and commit them.
 
 ## What to avoid
 

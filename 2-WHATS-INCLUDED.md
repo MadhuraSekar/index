@@ -1121,27 +1121,29 @@ design-system-ops/
 │   │   └── SKILL.md
 │   ├── engineering-onboarding/
 │   │   └── SKILL.md
-│   ├── visual-report/
-│   │   └── SKILL.md
-│   ├── full-system-diagnostic-agent.md    ← Agent chain
-│   ├── component-to-release-agent.md      ← Agent chain
-│   ├── governance-review-agent.md         ← Agent chain
-│   └── migration-agent.md                 ← Agent chain
+│   └── visual-report/
+│       └── SKILL.md
+│
+├── agents/                   ← 4 agent chains
+│   ├── full-system-diagnostic.md
+│   ├── component-to-release.md
+│   ├── governance-review.md
+│   └── migration.md
 │
 ├── commands/                 ← 13 slash commands
 │   ├── token-audit.md
 │   ├── component-audit.md
-│   ├── theme-audit.md
 │   ├── system-health.md
-│   ├── drift-detection.md
-│   ├── naming-audit.md
-│   ├── figma-variable-audit.md
-│   ├── codebase-index.md
 │   ├── system-benchmark.md
-│   ├── ai-component-description.md
-│   ├── system-pitch.md
-│   ├── adoption-report.md
-│   └── visual-report.md
+│   ├── drift-check.md
+│   ├── describe-component.md
+│   ├── visual-report.md
+│   ├── cicd-integration.md
+│   ├── codemod-generator.md
+│   ├── full-diagnostic.md
+│   ├── governance-review.md
+│   ├── migration.md
+│   └── release-check.md
 │
 ├── knowledge-notes/          ← 11 reference documents (single canonical source)
 │   ├── token-architecture.md

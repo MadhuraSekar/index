@@ -38,19 +38,27 @@ That is the difference. Not a smarter prompt. A different kind of output entirel
 
 ### Claude Code (terminal)
 
-Clone this repo into your Claude Code skills directory:
+Install as a plugin — this is the only method that activates everything: the skills, the 13 slash commands, and the 4 agent chains.
 
-```bash
-git clone https://github.com/murphytrueman/design-system-ops.git ~/.claude/skills/design-system-ops
+```
+/plugin marketplace add murphytrueman/design-system-ops
+/plugin install design-system-ops@design-system-ops
 ```
 
-For project-level installation (instead of global):
+Working offline or from a fork? Clone the repo anywhere and add it as a local marketplace:
 
 ```bash
-git clone https://github.com/murphytrueman/design-system-ops.git your-project/.claude/skills/design-system-ops
+git clone https://github.com/murphytrueman/design-system-ops.git
 ```
 
-**Verify:** Open Claude Code and say "How healthy is my design system?" If Claude responds with a structured, multi-step process — not generic advice — you're set up.
+```
+/plugin marketplace add ./design-system-ops
+/plugin install design-system-ops@design-system-ops
+```
+
+> **Note:** Cloning directly into `~/.claude/skills/` is no longer recommended — the repo nests skills one level too deep for skill discovery there, and slash commands and agent chains only load through the plugin system.
+
+**Verify:** Open Claude Code, run `/help` and confirm `/token-audit` is listed, then say "How healthy is my design system?" If Claude responds with a structured, multi-step process — not generic advice — you're set up.
 
 See [1-INSTALL.md](1-INSTALL.md) for the full guide with entry points by use case.
 

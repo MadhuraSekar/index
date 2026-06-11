@@ -5,9 +5,9 @@ allowed-tools: Read, Write, Grep, Glob, Bash(cat:*), Bash(find:*), Bash(head:*),
 
 Run the governance review — a quarterly assessment that produces an internal review, adoption analysis, drift summary, and stakeholder-ready brief.
 
-Load the agent instructions from ${CLAUDE_PLUGIN_ROOT}/skills/governance-review-agent.md and follow the complete workflow.
+Load the agent instructions from ${CLAUDE_PLUGIN_ROOT}/agents/governance-review.md and follow the complete workflow.
 
-Before starting, read the reference material for the adoption-report and drift-detection skills from their respective ${CLAUDE_PLUGIN_ROOT}/skills/*/references/ directories.
+Before starting, read the knowledge notes listed in the adoption-report and drift-detection skills' frontmatter `references:` lists — they live in ${CLAUDE_PLUGIN_ROOT}/knowledge-notes/.
 
 Begin with Step 1b (Adoption measurement calibration) to establish maturity-appropriate adoption expectations.
 

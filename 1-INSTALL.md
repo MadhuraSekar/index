@@ -11,16 +11,23 @@
 4. Follow the install prompt — done
 
 **In Claude Code (terminal):**
-1. Clone the repo directly into your skills directory:
-   ```bash
-   git clone https://github.com/murphytrueman/design-system-ops.git ~/.claude/skills/design-system-ops
+1. Add the repo as a plugin marketplace and install the plugin:
    ```
-   For project-level installation instead of global:
-   ```bash
-   git clone https://github.com/murphytrueman/design-system-ops.git your-project/.claude/skills/design-system-ops
+   /plugin marketplace add murphytrueman/design-system-ops
+   /plugin install design-system-ops@design-system-ops
    ```
-2. Open Claude Code and try: "How healthy is my design system?"
-3. If Claude responds with a structured, multi-step process — not generic advice — you're set up
+   Working offline or from a fork? Clone the repo anywhere, then add the local path as a marketplace:
+   ```bash
+   git clone https://github.com/murphytrueman/design-system-ops.git
+   ```
+   ```
+   /plugin marketplace add ./design-system-ops
+   /plugin install design-system-ops@design-system-ops
+   ```
+2. Run `/help` and confirm the `/token-audit` command is listed
+3. Try: "How healthy is my design system?" — if Claude responds with a structured, multi-step process rather than generic advice, you're set up
+
+> Installing as a plugin (rather than cloning into `~/.claude/skills/`) is required for the slash commands and agent chains to load; a bare clone into the skills directory also nests the skills one level too deep to be discovered.
 
 ---
 

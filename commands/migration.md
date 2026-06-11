@@ -5,7 +5,7 @@ allowed-tools: Read, Write, Grep, Glob, Bash(cat:*), Bash(diff:*), Bash(find:*),
 
 Run the migration agent to plan and execute a design system migration.
 
-Load the migration agent from ${CLAUDE_PLUGIN_ROOT}/skills/migration-agent.md and follow its complete workflow.
+Load the migration agent from ${CLAUDE_PLUGIN_ROOT}/agents/migration.md and follow its complete workflow.
 
 The user should describe the migration context: $ARGUMENTS
 
