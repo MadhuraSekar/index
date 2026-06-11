@@ -1,0 +1,21 @@
+{
+  "name": "muteform-ds-ops-pro",
+  "version": "1.0.0",
+  "description": "Muteform DS Ops Pro — the full design system operations suite for Claude Code: governance, drift detection, migrations, release pipelines, AI infrastructure, benchmarking, and stakeholder communication. 31 skills, 4 agent chains, 10 commands, 11 knowledge notes, monthly ecosystem updates.",
+  "author": {
+    "name": "Muteform"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "homepage": "https://muteform.com",
+  "keywords": [
+    "design-systems",
+    "tokens",
+    "governance",
+    "drift-detection",
+    "migration",
+    "figma",
+    "design-tokens",
+    "DTCG",
+    "muteform"
+  ]
+}

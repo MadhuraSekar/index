@@ -1,4 +1,4 @@
-# Contributing to Design System Ops
+# Contributing to Muteform DS Ops
 
 Thanks for considering a contribution. This project benefits from the experience of real design systems practitioners, and contributions that improve the skills for everyone are welcome.
 
@@ -21,7 +21,7 @@ Pull requests welcome. If something in the install guide, setup docs, or skill d
 
 Each skill is a markdown file (`SKILL.md`) inside its own folder under `skills/`. Skills reference knowledge notes directly from the canonical `knowledge-notes/` directory via their frontmatter `references:` field using relative paths like `../../knowledge-notes/filename.md`. When adding a new skill, include the knowledge note paths in the skill's frontmatter `references:` array.
 
-The project structure: skills in `skills/skillname/SKILL.md`, agent chains in `agents/`, slash commands in `commands/`, knowledge notes in `knowledge-notes/`, and sample outputs in `sample-outputs/`.
+The repo is a two-plugin monorepo: the free tier lives in `core/` and the commercial tier in `pro/`. Within each plugin: skills in `skills/skillname/SKILL.md`, agent chains in `agents/` (Pro only), slash commands in `commands/`, and knowledge notes in `knowledge-notes/`. Each plugin is self-contained — a skill may only reference notes inside its own plugin (the validator enforces this). Sample outputs live at the repo root in `sample-outputs/`.
 
 ## Validating your changes
 
@@ -37,7 +37,7 @@ It checks skill/agent/command frontmatter, naming rules, that every `references:
 
 - Generic AI advice. Every finding, recommendation, and output should be specific to the user's actual codebase, not templated.
 - Skills that duplicate what an existing skill already does. Check `2-WHATS-INCLUDED.md` for the full inventory.
-- Changes to knowledge notes without understanding which skills depend on them. The notes are shared references — changes propagate.
+- Changes to knowledge notes without understanding which skills depend on them. The notes are shared references — changes propagate. Notes that exist in both `core/` and `pro/` must be kept in sync.
 
 ## Code of conduct
 
@@ -45,4 +45,4 @@ Be decent. Assume good intent. Give constructive feedback. This is a project for
 
 ## Questions?
 
-Open an issue or reach out at [hello@murphytrueman.com](mailto:hello@murphytrueman.com).
+Open an issue on the repository.

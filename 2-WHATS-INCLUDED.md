@@ -1,14 +1,14 @@
-# Design System Ops
+# Muteform DS Ops
 
 **A Claude Code skill pack for the designers who build the systems everyone else uses.**
 
-Murphy Trueman · 2026 · [designsystemops.com](https://designsystemops.com)
+Muteform · 2026 · [muteform.com](https://muteform.com) · built on [Design System Ops](https://github.com/murphytrueman/design-system-ops) by Murphy Trueman (MIT — see NOTICE.md)
 
 ---
 
 ## What is this?
 
-Design System Ops is a toolkit that gives Claude (the AI) deep expertise in design systems work. It turns Claude into a design systems specialist that can audit your tokens, write component documentation, assess system health, plan deprecations, produce stakeholder briefs, encode governance rules, build context engines for AI agents, and much more — all grounded in 14 years of production design systems experience.
+Muteform DS Ops is a toolkit that gives Claude (the AI) deep expertise in design systems work. It turns Claude into a design systems specialist that can audit your tokens, write component documentation, assess system health, plan deprecations, produce stakeholder briefs, encode governance rules, build context engines for AI agents, and much more — grounded in the practitioner frameworks of the open-source Design System Ops project, which was built from 14 years of production design systems work.
 
 Instead of starting from scratch every time you ask Claude for help with your design system, these skills give it the frameworks, mental models, and structured processes that a staff-level design systems practitioner would use.
 
@@ -36,7 +36,7 @@ Think of it as Claude with access to your computer. You talk to it, and it can l
 
 ### What is Cowork?
 
-Cowork is a desktop feature of the Claude app that lets you work with Claude without needing a terminal. You can drag and drop files, install plugins, and have Claude work on tasks for you — all through a chat interface. If you are not comfortable with the command line, Cowork is the easiest way to use Design System Ops.
+Cowork is a desktop feature of the Claude app that lets you work with Claude without needing a terminal. You can drag and drop files, install plugins, and have Claude work on tasks for you — all through a chat interface. If you are not comfortable with the command line, Cowork is the easiest way to use Muteform DS Ops.
 
 ### What are skills?
 
@@ -66,11 +66,11 @@ You never need to interact with knowledge notes directly. They load automaticall
 
 ## How to install
 
-There are two ways to install Design System Ops, depending on whether you use Cowork (the desktop app) or Claude Code (the terminal).
+There are two ways to install Muteform DS Ops, depending on whether you use Cowork (the desktop app) or Claude Code (the terminal).
 
 ### Option A: Install in Cowork (easiest — no terminal needed)
 
-1. Download `design-system-ops.plugin` from the [`installable/`](installable/) folder in this repo
+1. Download `muteform-ds-ops.plugin` from the [`installable/`](installable/) folder in this repo
 2. Open the Claude desktop app and start a Cowork session
 3. Drop the `.plugin` file into the chat window
 4. Follow the install prompt — done
@@ -79,21 +79,23 @@ That is it. The skills are now available in every Cowork session.
 
 ### Option B: Install in Claude Code (terminal)
 
-1. Clone the repo directly into your Claude Code skills directory:
+1. Add this repo as a plugin marketplace and install the free core:
 
-```bash
-git clone https://github.com/murphytrueman/design-system-ops.git ~/.claude/skills/design-system-ops
+```
+/plugin marketplace add <this-repo>
+/plugin install muteform-ds-ops@muteform
 ```
 
-That path means: your home folder, then the `.claude` folder (it starts with a dot so it may be hidden), then `skills`, then clone `design-system-ops` here.
+2. Pro customers: after purchase you receive access to the private customer marketplace —
 
-2. If you want the skills available only for a specific project instead of everywhere:
-
-```bash
-git clone https://github.com/murphytrueman/design-system-ops.git your-project/.claude/skills/design-system-ops
+```
+/plugin marketplace add muteform/pro-marketplace
+/plugin install muteform-ds-ops-pro@muteform-pro
 ```
 
 3. Verify it works by typing a prompt like: "Run system-health on my design system."
+
+> Installing as a plugin (rather than cloning into `~/.claude/skills/`) is required — the slash commands and agent chains only load through the plugin system.
 
 ### Verifying the install
 
@@ -109,22 +111,18 @@ If Claude responds with a structured, detailed process (not a generic answer), t
 
 ## How to update
 
-When a new version of Design System Ops is released:
+When a new version of Muteform DS Ops is released:
 
 ### Updating in Cowork
 
-1. Download the latest `design-system-ops.plugin` from the [`installable/`](installable/) folder in this repo
+1. Download the latest `muteform-ds-ops.plugin` from the [`installable/`](installable/) folder in this repo
 2. Open a Cowork session
 3. Drag and drop the new `.plugin` file into the chat
 4. Follow the install prompt — it will replace the old version automatically
 
 ### Updating in Claude Code
 
-1. Pull the latest changes:
-   ```bash
-   cd ~/.claude/skills/design-system-ops && git pull
-   ```
-2. That is it — Claude Code loads skills fresh each session
+Run `/plugin` and update from the marketplace — Pro subscribers receive every monthly release through the private marketplace automatically.
 
 No settings or configuration are lost when you update. Your `.ds-ops-config.yml` file (if you have one) lives in your project root, not inside the skill pack, so it is never overwritten.
 
@@ -132,7 +130,7 @@ No settings or configuration are lost when you update. Your `.ds-ops-config.yml`
 
 ## Where to use each skill
 
-Design System Ops skills work in different contexts. Some are best used when Claude has access to your code. Others work best when connected to your design tool. Many work with just a conversation.
+Muteform DS Ops skills work in different contexts. Some are best used when Claude has access to your code. Others work best when connected to your design tool. Many work with just a conversation.
 
 ### Best when connected to your codebase
 
@@ -206,7 +204,7 @@ These skills work from your description of the situation. You do not need to pro
 
 ### Figma (full integration)
 
-Design System Ops has deep Figma integration through the Figma MCP server. When connected, skills can read your Figma components, variables, styles, and library analytics directly.
+Muteform DS Ops has deep Figma integration through the Figma MCP server. When connected, skills can read your Figma components, variables, styles, and library analytics directly.
 
 **What works with Figma:**
 - `ai-component-description` reads component structure and writes descriptions you paste back into Figma
@@ -249,7 +247,7 @@ The same approach applies: export your design data and share it with Claude. All
 
 ## Supported tool connections
 
-Design System Ops can connect to several tools to pull data automatically instead of requiring manual input. All connections are optional — every skill works without them.
+Muteform DS Ops can connect to several tools to pull data automatically instead of requiring manual input. All connections are optional — every skill works without them.
 
 ### Why connect tools?
 
@@ -991,7 +989,7 @@ The `sample-outputs/` directory contains six real skill outputs. Use these to un
 
 ## Optional configuration
 
-Design System Ops works out of the box with no configuration. If you want to customise it, create a `.ds-ops-config.yml` file in your project root. A fully annotated template ships with the repo at `.ds-ops-config.yml` in the root.
+Muteform DS Ops works out of the box with no configuration. If you want to customise it, create a `.ds-ops-config.yml` file in your project root. A fully annotated template ships with the repo at `.ds-ops-config.yml` in the root.
 
 **What you can configure:**
 - Severity levels for specific violation types
@@ -1033,141 +1031,33 @@ Say "write a stakeholder brief" with whatever data you have.
 ### Folder structure
 
 ```
-design-system-ops/
-├── .claude-plugin/           ← Plugin manifest
-│   └── plugin.json
-├── .ds-ops-config.yml        ← Team configuration (optional)
-├── 1-INSTALL.md              ← Quick-start installation guide
-├── 2-WHATS-INCLUDED.md       ← This file
-├── 3-SETUP-AND-CONFIG.md     ← Detailed setup, configuration, and troubleshooting
-├── CHANGELOG.md              ← Version history
-├── CONTRIBUTING.md           ← Contribution guide
-├── LICENSE                   ← MIT license
-│
-├── skills/                   ← 39 skills, each in its own directory
-│   ├── token-audit/
-│   │   └── SKILL.md
-│   ├── component-audit/
-│   │   └── SKILL.md
-│   ├── theme-audit/
-│   │   └── SKILL.md
-│   ├── system-health/
-│   │   └── SKILL.md
-│   ├── drift-detection/
-│   │   └── SKILL.md
-│   ├── naming-audit/
-│   │   └── SKILL.md
-│   ├── figma-variable-audit/
-│   │   └── SKILL.md
-│   ├── codebase-index/
-│   │   └── SKILL.md
-│   ├── system-benchmark/
-│   │   └── SKILL.md
-│   ├── contribution-workflow/
-│   │   └── SKILL.md
-│   ├── deprecation-process/
-│   │   └── SKILL.md
-│   ├── decision-record/
-│   │   └── SKILL.md
-│   ├── change-communication/
-│   │   └── SKILL.md
-│   ├── backlog-generator/
-│   │   └── SKILL.md
-│   ├── version-bump-advisor/
-│   │   └── SKILL.md
-│   ├── release-retrospective/
-│   │   └── SKILL.md
-│   ├── governance-encoder/
-│   │   └── SKILL.md
-│   ├── session-memory/
-│   │   └── SKILL.md
-│   ├── codemod-generator/
-│   │   └── SKILL.md
-│   ├── triage/
-│   │   └── SKILL.md
-│   ├── ai-component-description/
-│   │   └── SKILL.md
-│   ├── pattern-documentation/
-│   │   └── SKILL.md
-│   ├── token-documentation/
-│   │   └── SKILL.md
-│   ├── usage-guidelines/
-│   │   └── SKILL.md
-│   ├── component-decision-tree/
-│   │   └── SKILL.md
-│   ├── context-engine-builder/
-│   │   └── SKILL.md
-│   ├── metadata-schema-generator/
-│   │   └── SKILL.md
-│   ├── design-to-code-check/
-│   │   └── SKILL.md
-│   ├── accessibility-per-component/
-│   │   └── SKILL.md
-│   ├── token-compliance/
-│   │   └── SKILL.md
-│   ├── schema-validator/
-│   │   └── SKILL.md
-│   ├── component-api-validator/
-│   │   └── SKILL.md
-│   ├── cicd-integration/
-│   │   └── SKILL.md
-│   ├── adoption-report/
-│   │   └── SKILL.md
-│   ├── stakeholder-brief/
-│   │   └── SKILL.md
-│   ├── system-pitch/
-│   │   └── SKILL.md
-│   ├── designer-onboarding/
-│   │   └── SKILL.md
-│   ├── engineering-onboarding/
-│   │   └── SKILL.md
-│   └── visual-report/
-│       └── SKILL.md
-│
-├── agents/                   ← 4 agent chains
-│   ├── full-system-diagnostic.md
-│   ├── component-to-release.md
-│   ├── governance-review.md
-│   └── migration.md
-│
-├── commands/                 ← 13 slash commands
-│   ├── token-audit.md
-│   ├── component-audit.md
-│   ├── system-health.md
-│   ├── system-benchmark.md
-│   ├── drift-check.md
-│   ├── describe-component.md
-│   ├── visual-report.md
-│   ├── cicd-integration.md
-│   ├── codemod-generator.md
-│   ├── full-diagnostic.md
-│   ├── governance-review.md
-│   ├── migration.md
-│   └── release-check.md
-│
-├── knowledge-notes/          ← 11 reference documents (single canonical source)
-│   ├── token-architecture.md
-│   ├── component-governance.md
-│   ├── ai-readiness.md
-│   ├── design-to-code-contract.md
-│   ├── component-bestiary-reference.md
-│   ├── agent-orchestration-guide.md
-│   ├── human-oversight-framework.md
-│   ├── mcp-setup-guide.md
-│   ├── context-engine-blueprints.md
-│   ├── output-discipline.md
-│   └── adoption-measurement.md
-│
-└── sample-outputs/           ← 6 calibration examples
-    ├── example-component-description.md
-    ├── example-token-audit.md
-    ├── system-health-campusiq.md
-    ├── component-audit-fintech-pulse.md
-    ├── drift-detection-sparky-consumer-app.md
-    └── stakeholder-brief-campusiq-q1.md
+muteform-ds-ops/
+├── .claude-plugin/
+│   └── marketplace.json      ← Lists both plugins
+├── core/                     ← muteform-ds-ops (free, MIT)
+│   ├── .claude-plugin/plugin.json
+│   ├── skills/               ← 8 audit skills, each in its own directory
+│   ├── commands/             ← /token-audit, /component-audit, /system-health
+│   ├── knowledge-notes/      ← 9 reference documents
+│   └── .ds-ops-config.yml    ← Team configuration template (optional)
+├── pro/                      ← muteform-ds-ops-pro (commercial)
+│   ├── .claude-plugin/plugin.json
+│   ├── skills/               ← 31 skills
+│   ├── agents/               ← 4 agent chains
+│   ├── commands/             ← 10 slash commands
+│   ├── knowledge-notes/      ← 11 reference documents
+│   ├── .ds-ops-config.yml
+│   └── LICENSE.md            ← Commercial license
+├── sample-outputs/           ← 6 calibration examples
+├── docs/                     ← Launch plan and pricing copy
+├── scripts/                  ← Pack validator and installable builder
+├── installable/              ← Pre-built .plugin archives per tier
+├── 1-INSTALL.md · 2-WHATS-INCLUDED.md · 3-SETUP-AND-CONFIG.md
+├── CHANGELOG.md · CONTRIBUTING.md · LICENSE · NOTICE.md
+└── README.md
 ```
 
-Skills reference the canonical `knowledge-notes/` directory directly through frontmatter paths (e.g., `../../knowledge-notes/filename.md`). The plugin framework auto-loads these files when a skill runs — you do not need to manage separate copies. This keeps knowledge notes in a single, maintainable location.
+Within each plugin, skills reference that plugin's `knowledge-notes/` directory through frontmatter paths (e.g., `../../knowledge-notes/filename.md`). The plugin framework auto-loads these files when a skill runs — each tier is fully self-contained.
 
 ---
 
@@ -1179,8 +1069,6 @@ See **[3-SETUP-AND-CONFIG.md](3-SETUP-AND-CONFIG.md)** for: integration setup in
 
 ## About
 
-Murphy Trueman is a design systems leader and writer with 14+ years of experience. This product is built from real work — production atomic design systems, a three-tier token architecture built for a large-scale enterprise platform, and production AI governance work in agentic component generation.
+Muteform DS Ops is built and maintained by Muteform. The practitioner frameworks at its heart originate in [Design System Ops](https://github.com/murphytrueman/design-system-ops) by Murphy Trueman — a design systems leader with 14+ years of experience — used under the MIT License. See [NOTICE.md](NOTICE.md) for the full attribution and licensing structure.
 
-blog.murphytrueman.com · thecomponentbestiary.com · designsystemsforai.com
-
-If you found this useful, [buy me a coffee](https://buymeacoffee.com/murphytrueman).
+[muteform.com](https://muteform.com)

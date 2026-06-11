@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 # Rebuild the distributable artifacts in installable/ from the working tree.
 #
-# Produces:
-#   installable/design-system-ops.zip     — generic archive
-#   installable/design-system-ops.plugin  — same archive, Cowork drag-and-drop name
+# Produces one archive per tier:
+#   installable/muteform-ds-ops.zip / .plugin       — free core
+#   installable/muteform-ds-ops-pro.zip / .plugin   — Pro (private distribution only)
 #
+# The .plugin copies are the same archives named for Cowork drag-and-drop.
 # Run from anywhere: scripts/build-installable.sh
 set -euo pipefail
 
@@ -13,35 +14,25 @@ cd "$ROOT"
 
 node scripts/validate.mjs
 
-STAGE="$(mktemp -d)"
-trap 'rm -rf "$STAGE"' EXIT
-
-# Only ship what the plugin runtime needs plus the user-facing docs.
-INCLUDE=(
-  .claude-plugin
-  skills
-  agents
-  commands
-  knowledge-notes
-  sample-outputs
-  .ds-ops-config.yml
-  README.md
-  1-INSTALL.md
-  2-WHATS-INCLUDED.md
-  3-SETUP-AND-CONFIG.md
-  CHANGELOG.md
-  LICENSE
-)
-
-for item in "${INCLUDE[@]}"; do
-  cp -r "$item" "$STAGE/$item"
-done
-
 mkdir -p installable
-rm -f installable/design-system-ops.zip installable/design-system-ops.plugin
+rm -f installable/*.zip installable/*.plugin
 
-(cd "$STAGE" && zip -q -r -X "$ROOT/installable/design-system-ops.zip" .)
-cp installable/design-system-ops.zip installable/design-system-ops.plugin
+build_tier() {
+  local tier="$1" name="$2"
+  local stage
+  stage="$(mktemp -d)"
+
+  # The plugin directory is self-contained; add the shared root docs.
+  cp -r "$tier"/. "$stage/"
+  cp README.md CHANGELOG.md LICENSE NOTICE.md "$stage/"
+
+  (cd "$stage" && zip -q -r -X "$ROOT/installable/$name.zip" .)
+  cp "installable/$name.zip" "installable/$name.plugin"
+  rm -rf "$stage"
+}
+
+build_tier core muteform-ds-ops
+build_tier pro muteform-ds-ops-pro
 
 echo "Built:"
 ls -la installable/

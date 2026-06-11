@@ -1,0 +1,20 @@
+{
+  "name": "muteform-ds-ops",
+  "version": "1.0.0",
+  "description": "Muteform DS Ops (free core) — staff-level design system auditing for Claude Code: token, component, naming, theme, and accessibility audits plus system health, with severity-rated findings and prioritised remediation. 8 skills, 3 commands, 9 knowledge notes.",
+  "author": {
+    "name": "Muteform"
+  },
+  "license": "MIT",
+  "homepage": "https://muteform.com",
+  "keywords": [
+    "design-systems",
+    "tokens",
+    "components",
+    "audit",
+    "accessibility",
+    "design-tokens",
+    "DTCG",
+    "muteform"
+  ]
+}

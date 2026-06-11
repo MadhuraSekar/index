@@ -1,34 +1,50 @@
 {
-  "name": "design-system-ops",
+  "name": "muteform",
   "owner": {
-    "name": "Murphy Trueman",
-    "email": "hello@murphytrueman.com"
+    "name": "Muteform"
   },
   "metadata": {
-    "description": "Staff-level design system operations for Claude Code — audits, governance, documentation, validation, and communication",
-    "version": "2.0.0"
+    "description": "Muteform DS Ops — design system operations for Claude Code. Free core; Pro via the private customer marketplace.",
+    "version": "1.0.0"
   },
   "plugins": [
     {
-      "name": "design-system-ops",
-      "source": "./",
-      "description": "Staff-level design system auditing, governance, documentation, validation, and communication — 39 skills, 4 agents, 13 commands, and 11 knowledge notes for the full design system lifecycle",
-      "version": "2.0.0",
+      "name": "muteform-ds-ops",
+      "source": "./core",
+      "description": "Free core: token, component, naming, theme, and accessibility audits plus system health — staff-level findings, not generic advice.",
+      "version": "1.0.0",
       "author": {
-        "name": "Murphy Trueman"
+        "name": "Muteform"
       },
-      "homepage": "https://designsystemops.com",
+      "homepage": "https://muteform.com",
       "license": "MIT",
       "category": "design",
       "keywords": [
         "design-systems",
         "tokens",
-        "components",
         "audit",
-        "governance",
         "accessibility",
-        "figma",
         "design-tokens",
+        "DTCG"
+      ]
+    },
+    {
+      "name": "muteform-ds-ops-pro",
+      "source": "./pro",
+      "description": "Pro: governance, drift detection, migrations, release pipelines, AI infrastructure, benchmarking, and stakeholder communication. Distributed to customers via the private marketplace at launch.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Muteform"
+      },
+      "homepage": "https://muteform.com",
+      "license": "Commercial",
+      "category": "design",
+      "keywords": [
+        "design-systems",
+        "governance",
+        "drift-detection",
+        "migration",
+        "figma",
         "DTCG"
       ]
     }

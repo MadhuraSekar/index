@@ -1,8 +1,28 @@
 # Changelog
 
-All notable changes to Design Systems OS will be documented in this file.
+All notable changes to Muteform DS Ops will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html). Entries up to and including 2.0.0 cover the upstream lineage as Design System Ops; Muteform DS Ops versioning restarts at 1.0.0.
+
+## [1.0.0] — 2026-07 (Muteform DS Ops)
+
+First release under the Muteform brand. Commercial fork of Design System Ops
+(see [NOTICE.md](NOTICE.md) for attribution and licensing).
+
+### Added
+
+- **Two-tier product structure.** The pack is now a two-plugin monorepo:
+  - `core/` — **muteform-ds-ops** (free, MIT): 8 audit skills (token-audit, component-audit, system-health, naming-audit, theme-audit, accessibility-per-component, token-documentation, decision-record), 3 commands, 9 knowledge notes.
+  - `pro/` — **muteform-ds-ops-pro** (commercial): 31 skills, all 4 agent chains, 10 commands, 11 knowledge notes, plus the monthly ecosystem-update commitment.
+- **pro/LICENSE.md** — commercial license for the Pro tier (seat-based, outputs unrestricted, MIT-derived portions unaffected).
+- **NOTICE.md** — upstream attribution and the licensing structure in plain language.
+- **Launch kit** (`docs/`) — launch plan with moat roadmap (hosted CI layer, Muteform Index benchmarks), pricing page copy, and private-marketplace gating architecture.
+
+### Changed
+
+- **Validator** now validates each plugin independently, enforces plugin self-containment (references may not escape the plugin directory), and cross-checks plugin versions against the root marketplace manifest.
+- **Build script** produces one installable per tier.
+- **Marketplace manifest** lists both plugins; at launch the Pro source moves to the private customer marketplace.
 
 ## [2.0.0] — 2026-07
 

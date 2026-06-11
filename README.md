@@ -1,93 +1,70 @@
-# Design System Ops
+# Muteform DS Ops
 
-![Design System Ops](og-image.png)
+Design system operations for Claude Code — run your system like infrastructure, not a side project.
 
-Claude Code skills for the work that keeps a design system alive.
-
-[designsystemops.com](https://designsystemops.com)
+[muteform.com](https://muteform.com)
 
 ---
 
 ## The work nobody built AI for
 
 Design systems drift. Tokens go stale. Components fall out of spec. Governance documentation gets written once and never updated. The deprecation plan lives in someone's head. The stakeholder brief gets thrown together the night before quarterly review.
-There are great AI tools for the designer who uses a design system. But the team running it? That work never had proper tooling – until now.
+
+There are great AI tools for the designer who *uses* a design system. Muteform DS Ops is for the team *running* it.
+
+When you ask Claude to audit your tokens with this pack installed, it doesn't give you generic advice. It reads your actual token files, identifies tier leakage, flags naming violations, produces a prioritised finding table with remediation guidance, and — if you're migrating to DTCG — gives you a sprint-plannable migration plan with hour estimates.
+
+**Who it's for:** Design systems leads, senior design engineers, and anyone responsible for a production design system.
 
 ---
 
-## What this is
+## Free core vs. Pro
 
-A skill pack for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and [Cowork](https://claude.ai) that teaches Claude how to do design systems work the way a staff-level practitioner would — with structured processes, expert frameworks, and output calibrated to the actual complexity of what you're dealing with.
+| | **Core** (free, MIT) | **Pro** (subscription) |
+|---|---|---|
+| Token, component, naming, theme & a11y audits | ✓ | ✓ |
+| System health reports | ✓ | ✓ |
+| Decision records & token documentation | ✓ | ✓ |
+| Drift detection & system benchmarking | — | ✓ |
+| Agent chains: full diagnostic, release pipeline, governance review, migration | — | ✓ |
+| Governance suite: contribution workflow, deprecation, triage, versioning, retrospectives | — | ✓ |
+| AI infrastructure: context engines, codebase index, metadata schemas, MCP descriptions | — | ✓ |
+| Validation: design-to-code checks, token compliance, API validation, CI/CD integration | — | ✓ |
+| Communication: adoption reports, stakeholder briefs, system pitch, visual reports, onboarding | — | ✓ |
+| Codemod generation | — | ✓ |
+| Monthly ecosystem updates (DTCG, Figma MCP, Claude Code changes) | — | ✓ |
+| Priority support | — | ✓ |
+| **Contents** | 8 skills · 3 commands · 9 knowledge notes | 31 skills · 4 agents · 10 commands · 11 knowledge notes |
 
-When you ask Claude to audit your tokens, it doesn't give you generic advice. It reads your actual token files, identifies tier leakage, flags naming violations, produces a prioritised finding table with remediation guidance, and — if you're migrating to DTCG — gives you a sprint-plannable migration plan with hour estimates.
-
-That is the difference. Not a smarter prompt. A different kind of output entirely.
-
-**Who it's for:** Design systems leads, senior design engineers, and anyone responsible for a production design system. The people who run the system, not just the people who use it.
+Pro pricing and purchase: [muteform.com/pricing](https://muteform.com/pricing) — your subscription unlocks the private plugin marketplace.
 
 ---
 
-## Install
-
-### Cowork (desktop app — easiest)
-
-1. Download `design-system-ops.plugin` from the [`installable/`](installable/) folder
-2. Open the Claude desktop app and start a Cowork session
-3. Drop the `.plugin` file into the chat
-4. Follow the install prompt — done
+## Install the free core
 
 ### Claude Code (terminal)
 
-Install as a plugin — this is the only method that activates everything: the skills, the 13 slash commands, and the 4 agent chains.
-
 ```
-/plugin marketplace add murphytrueman/design-system-ops
-/plugin install design-system-ops@design-system-ops
+/plugin marketplace add <this-repo>
+/plugin install muteform-ds-ops@muteform
 ```
 
-Working offline or from a fork? Clone the repo anywhere and add it as a local marketplace:
+### Cowork (desktop app)
 
-```bash
-git clone https://github.com/murphytrueman/design-system-ops.git
+1. Download `muteform-ds-ops.plugin` from the [`installable/`](installable/) folder
+2. Start a Cowork session and drop the `.plugin` file into the chat
+3. Follow the install prompt
+
+**Verify:** run `/help` and confirm `/token-audit` is listed, then say "How healthy is my design system?" If Claude responds with a structured, multi-step process — not generic advice — you're set up.
+
+### Pro
+
+After purchase you'll receive an invite to the private customer marketplace:
+
 ```
-
+/plugin marketplace add muteform/pro-marketplace
+/plugin install muteform-ds-ops-pro@muteform-pro
 ```
-/plugin marketplace add ./design-system-ops
-/plugin install design-system-ops@design-system-ops
-```
-
-> **Note:** Cloning directly into `~/.claude/skills/` is no longer recommended — the repo nests skills one level too deep for skill discovery there, and slash commands and agent chains only load through the plugin system.
-
-**Verify:** Open Claude Code, run `/help` and confirm `/token-audit` is listed, then say "How healthy is my design system?" If Claude responds with a structured, multi-step process — not generic advice — you're set up.
-
-See [1-INSTALL.md](1-INSTALL.md) for the full guide with entry points by use case.
-
----
-
-## What's included
-
-### Skills
-
-| Category | Skills | What they do |
-|----------|--------|-------------|
-| **Audit** | token-audit, component-audit, system-health, drift-detection, naming-audit, figma-variable-audit, codebase-index, system-benchmark, theme-audit | Understand what you actually have |
-| **Govern** | contribution-workflow, deprecation-process, decision-record, change-communication, backlog-generator, version-bump-advisor, release-retrospective, governance-encoder, session-memory, codemod-generator, triage | Run the system as infrastructure |
-| **Document** | ai-component-description, pattern-documentation, token-documentation, usage-guidelines, component-decision-tree, context-engine-builder, metadata-schema-generator | Make the system legible to humans and machines |
-| **Validate** | design-to-code-check, accessibility-per-component, token-compliance, schema-validator, component-api-validator, cicd-integration | Verify quality before it ships |
-| **Communicate** | adoption-report, stakeholder-brief, system-pitch, designer-onboarding, engineering-onboarding, visual-report | Move people and decisions |
-
-### Agents
-
-| Agent | What it chains | When to use it |
-|-------|---------------|----------------|
-| `/full-diagnostic` | 5 audit skills with cross-skill synthesis | Quarterly review or inheriting a system |
-| `/release-check` | Design-to-code, accessibility, token compliance, AI description, usage guidelines, change communication | Before shipping any component |
-| `/governance-review` | Adoption report, drift detection, stakeholder brief | Monthly or quarterly governance cadence |
-| `/migration` | Token audit, naming audit, migration plan, codemod generation, communication | Planning a major migration |
-
-### AI infrastructure skills
-
-Five skills produce machine-readable files that AI agents and tooling consume directly: `context-engine-builder`, `governance-encoder`, `codebase-index`, `component-decision-tree`, and `metadata-schema-generator`. If you're building AI-native design system infrastructure, these are the files your agents need.
 
 ---
 
@@ -96,67 +73,38 @@ Five skills produce machine-readable files that AI agents and tooling consume di
 The skills encode specific practitioner frameworks, not generic advice:
 
 - **Three-tier token architecture** — primitive → semantic → component, with tier-leakage detection and DTCG 2025.10 alignment
-- **Component Challenge Rating** — a difficulty classification system that calibrates audit depth and remediation estimates to actual component complexity
-- **Design system maturity model** — five levels from ad-hoc to optimised, used across health reports, stakeholder briefs, and adoption tracking to frame recommendations appropriately
+- **Component Challenge Rating** — a difficulty classification that calibrates audit depth and remediation estimates to actual component complexity
+- **Design system maturity model** — five levels from ad-hoc to optimised, used across health reports, briefs, and adoption tracking
 - **AI-readiness scoring** — evaluates how well your system's metadata, naming, and structure support AI agent consumption
+
+---
+
+## Roadmap (Pro)
+
+- **CI mode** — a GitHub App that runs drift and compliance audits on every pull request and tracks findings over time
+- **Muteform Index** — opt-in, anonymised benchmark data from real audit runs, so reports can say "your naming consistency is in the 34th percentile of production systems" instead of guessing
+- **Trend dashboards** — token debt, drift velocity, and adoption curves per team, quarter over quarter
 
 ---
 
 ## Quick examples
 
-**"I just want to know where we stand"**
-→ Say: "How healthy is my design system?"
-
-**"Our tokens are a mess"**
-→ Say: "Audit my tokens"
-
-**"I need to deprecate a component"**
-→ Say: "Help me deprecate DatePicker in favour of DatePickerNext"
-
-**"I need to convince leadership"**
-→ Say: "Write a stakeholder brief for leadership about our design system"
-
-**"Run the full pre-release pipeline"**
-→ Say: "Run the release pipeline for Dialog"
+- *"I just want to know where we stand"* → "How healthy is my design system?"
+- *"Our tokens are a mess"* → "Audit my tokens"
+- *"I need to deprecate a component"* (Pro) → "Help me deprecate DatePicker in favour of DatePickerNext"
+- *"Run the full pre-release pipeline"* (Pro) → "Run the release pipeline for Dialog"
 
 You don't need to memorise skill names. Describe what you need and the right skill activates.
 
----
-
-## Sample outputs
-
-Real outputs from real codebases are in [`sample-outputs/`](sample-outputs/):
-
-- **[example-token-audit.md](sample-outputs/example-token-audit.md)** — A complete audit of a ~480 token system: 11 findings across Critical/High/Medium/Low, specific code examples, DTCG alignment assessment, and a prioritised remediation roadmap.
-- **[example-component-description.md](sample-outputs/example-component-description.md)** — A six-section MCP description for a React Dialog component: ~620 words of structured plain text for Figma.
-- **[example-health-dashboard.html](sample-outputs/example-health-dashboard.html)** — An interactive HTML dashboard generated from audit findings: health radar, severity distribution, priority matrix, metric cards. Open in any browser.
+Real outputs from real codebases are in [`sample-outputs/`](sample-outputs/).
 
 ---
 
 ## Configuration
 
-Every skill works out of the box with no configuration. If you want to customise behaviour — severity overrides, Figma integration, GitHub API access, recurring trend tracking — create a `.ds-ops-config.yml` in your project root. An annotated template is included in the skill pack.
+Every skill works out of the box. To customise — severity overrides, Figma integration, recurring trend tracking — create a `.ds-ops-config.yml` in your project root (annotated template ships with both tiers). Full reference: [3-SETUP-AND-CONFIG.md](3-SETUP-AND-CONFIG.md).
 
-See [3-SETUP-AND-CONFIG.md](3-SETUP-AND-CONFIG.md) for the full configuration reference.
-
----
-
-## Figma integration (optional)
-
-Several skills become more powerful when Claude can read your Figma file directly. Two options:
-
-- **[Figma Console MCP](https://github.com/southleft/figma-console-mcp)** (recommended) — Read and write access. Skills can write descriptions back into components, rename variables, create tokens.
-- **[Standard Figma MCP](https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server)** — Read-only access. Skills pull component data and variable collections.
-
-Setup details in [1-INSTALL.md](1-INSTALL.md#setting-up-figma-integration).
-
----
-
-## Requirements
-
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) or [Cowork](https://claude.ai) (Claude desktop app)
-- Access to your design system's source files (tokens, components, config)
-- Works with any stack: React, Vue, Twig, Tailwind, SCSS, CSS custom properties, Style Dictionary, Emotion, CSS-in-JS
+Several skills become more powerful with Figma access via the [Figma MCP server](https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server). Setup details in [1-INSTALL.md](1-INSTALL.md).
 
 ---
 
@@ -170,26 +118,8 @@ Setup details in [1-INSTALL.md](1-INSTALL.md#setting-up-figma-integration).
 
 ---
 
-## Contributing
+## License & attribution
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+The free core is MIT-licensed. Pro is commercially licensed ([pro/LICENSE.md](pro/LICENSE.md)).
 
----
-
-## License
-
-MIT — see [LICENSE](LICENSE).
-
----
-
-## Support
-
-If you found this useful, [buy me a coffee](https://buymeacoffee.com/murphytrueman).
-
----
-
-## Author
-
-**Murphy Trueman** — [designsystemops.com](https://designsystemops.com) · [hello@murphytrueman.com](mailto:hello@murphytrueman.com)
-
-Built from 14 years of production design systems work. If it's in these skills, it's because it came up in real work.
+Muteform DS Ops is built on [Design System Ops](https://github.com/murphytrueman/design-system-ops) by Murphy Trueman, used under the MIT License — see [NOTICE.md](NOTICE.md). The practitioner frameworks at the heart of this pack originate in that open-source work.
