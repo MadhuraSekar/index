@@ -5,9 +5,9 @@ allowed-tools: Read, Write, Grep, Glob, Bash(cat:*), Bash(find:*), Bash(head:*),
 
 Run the component-to-release pipeline to validate a component is ready to ship.
 
-This command chains multiple skills into a single pre-release workflow. Load the agent instructions from ${CLAUDE_PLUGIN_ROOT}/skills/component-to-release-agent.md and follow the complete pipeline.
+This command chains multiple skills into a single pre-release workflow. Load the agent instructions from ${CLAUDE_PLUGIN_ROOT}/agents/component-to-release.md and follow the complete pipeline.
 
-Before starting, read the reference material for each chained skill from their respective ${CLAUDE_PLUGIN_ROOT}/skills/*/references/ directories.
+Before starting, read the knowledge notes listed in each chained skill's frontmatter `references:` list — they live in ${CLAUDE_PLUGIN_ROOT}/knowledge-notes/.
 
 Begin with Phase 0 (Component type decision) — classify whether this is a new component, enhancement, breaking change, or bug fix, then adjust the pipeline depth accordingly.
 

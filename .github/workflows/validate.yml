@@ -1,0 +1,19 @@
+name: Validate pack
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate skills, agents, commands, and manifests
+        run: node scripts/validate.mjs
+      - name: Check installables are rebuildable
+        run: bash scripts/build-installable.sh

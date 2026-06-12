@@ -1,0 +1,52 @@
+{
+  "name": "muteform",
+  "owner": {
+    "name": "Muteform"
+  },
+  "metadata": {
+    "description": "Muteform DS Ops — design system operations for Claude Code. Free core; Pro via the private customer marketplace.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "muteform-ds-ops",
+      "source": "./core",
+      "description": "Free core: token, component, naming, theme, and accessibility audits plus system health — staff-level findings, not generic advice.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Muteform"
+      },
+      "homepage": "https://muteform.com",
+      "license": "MIT",
+      "category": "design",
+      "keywords": [
+        "design-systems",
+        "tokens",
+        "audit",
+        "accessibility",
+        "design-tokens",
+        "DTCG"
+      ]
+    },
+    {
+      "name": "muteform-ds-ops-pro",
+      "source": "./pro",
+      "description": "Pro: governance, drift detection, migrations, release pipelines, AI infrastructure, benchmarking, and stakeholder communication. Distributed to customers via the private marketplace at launch.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Muteform"
+      },
+      "homepage": "https://muteform.com",
+      "license": "Commercial",
+      "category": "design",
+      "keywords": [
+        "design-systems",
+        "governance",
+        "drift-detection",
+        "migration",
+        "figma",
+        "DTCG"
+      ]
+    }
+  ]
+}

@@ -1,10 +1,10 @@
-# Design System Ops — Setup and configuration guide
+# Muteform DS Ops — Setup and configuration guide
 
 **Version:** 1.1
 **Last updated:** 2026-03-08
-**Maintainer:** Murphy Trueman · [designsystemops.com](https://designsystemops.com)
+**Maintainer:** Murphy Trueman · [muteform.com](https://muteform.com)
 
-This document is the single source of truth for installing, configuring, and getting value from Design System Ops. Update it whenever the product changes.
+This document is the single source of truth for installing, configuring, and getting value from Muteform DS Ops. Update it whenever the product changes.
 
 ---
 
@@ -377,7 +377,7 @@ The `sample-outputs/` directory contains three real skill outputs:
 
 ## Framework compatibility
 
-Design System Ops works with any component framework. Here is framework-specific guidance:
+Muteform DS Ops works with any component framework. Here is framework-specific guidance:
 
 ### React (JSX/TSX)
 
@@ -807,4 +807,4 @@ This section tracks every change to the product. Update it with every modificati
 
 ---
 
-If you found this useful, [buy me a coffee](https://buymeacoffee.com/murphytrueman).
+Muteform DS Ops is built on [Design System Ops](https://github.com/murphytrueman/design-system-ops) by Murphy Trueman (MIT) — see [NOTICE.md](NOTICE.md). Questions: [muteform.com](https://muteform.com).

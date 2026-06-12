@@ -1,26 +1,33 @@
-# Installing Design System Ops
+# Installing Muteform DS Ops
 
-[designsystemops.com](https://designsystemops.com)
+[muteform.com](https://muteform.com)
 
 ## Quick start (2 minutes)
 
 **In Cowork (desktop app — easiest, no terminal needed):**
-1. Download `design-system-ops.plugin` from the [`installable/`](installable/) folder in this repo
+1. Download `muteform-ds-ops.plugin` from the [`installable/`](installable/) folder in this repo
 2. Open the Claude desktop app and start a Cowork session
 3. Drop the `.plugin` file into the chat
 4. Follow the install prompt — done
 
 **In Claude Code (terminal):**
-1. Clone the repo directly into your skills directory:
-   ```bash
-   git clone https://github.com/murphytrueman/design-system-ops.git ~/.claude/skills/design-system-ops
+1. Add the repo as a plugin marketplace and install the plugin:
    ```
-   For project-level installation instead of global:
-   ```bash
-   git clone https://github.com/murphytrueman/design-system-ops.git your-project/.claude/skills/design-system-ops
+   /plugin marketplace add <this-repo>
+   /plugin install muteform-ds-ops@muteform
    ```
-2. Open Claude Code and try: "How healthy is my design system?"
-3. If Claude responds with a structured, multi-step process — not generic advice — you're set up
+   Working offline or from a fork? Clone the repo anywhere, then add the local path as a marketplace:
+   ```bash
+   git clone <this-repo>
+   ```
+   ```
+   /plugin marketplace add ./<repo-dir>
+   /plugin install muteform-ds-ops@muteform
+   ```
+2. Run `/help` and confirm the `/token-audit` command is listed
+3. Try: "How healthy is my design system?" — if Claude responds with a structured, multi-step process rather than generic advice, you're set up
+
+> Installing as a plugin (rather than cloning into `~/.claude/skills/`) is required for the slash commands and agent chains to load; a bare clone into the skills directory also nests the skills one level too deep to be discovered.
 
 ---
 
@@ -451,4 +458,4 @@ Your project-level config is not inside the skill pack, so it's never overwritte
 
 ---
 
-If you found this useful, [buy me a coffee](https://buymeacoffee.com/murphytrueman).
+Muteform DS Ops is built on [Design System Ops](https://github.com/murphytrueman/design-system-ops) by Murphy Trueman (MIT) — see [NOTICE.md](NOTICE.md). Questions: [muteform.com](https://muteform.com).
